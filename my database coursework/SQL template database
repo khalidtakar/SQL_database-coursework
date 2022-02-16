@@ -1,0 +1,138 @@
+/* Student name: Khalid Takar               
+Student username: adck813           
+*/
+
+/* SECTION 1 CREATE TABLE STATEMENTS */
+
+CREATE TABLE Fitness (`Patient ID` int(10) NOT NULL, `injury description` varchar(255) NOT NULL, `injury timeline` time(365) NOT NULL, `injury history` varchar(255) NOT NULL, `players ID` int(10) NOT NULL, PRIMARY KEY (`Patient ID`, `players ID`));
+CREATE TABLE Groups (`Group ID` varchar(2) NOT NULL, `Group Placement` int(1) NOT NULL, `Group points` int(2) NOT NULL, `Group Letters` char(1) NOT NULL, PRIMARY KEY (`Group ID`));
+CREATE TABLE `Player stats` (Goals int(10) NOT NULL, assists int(10) NOT NULL, xG int(10) NOT NULL, xA int(10) NOT NULL, Appearances int(10) NOT NULL, `clean sheets` int(10) NOT NULL, trophies int(10) NOT NULL, `Players ID` int(10) NOT NULL, PRIMARY KEY (`Players ID`));
+CREATE TABLE Players (`Players ID` int(10) NOT NULL AUTO_INCREMENT, `Players Name` int(10) NOT NULL, `Players Age` int(10) NOT NULL, `Players Nationality` int(10) NOT NULL, `Team ID` int(3) NOT NULL, salary int(10) NOT NULL, `players brand image` varchar(255) NOT NULL, `Sponsorshipsplayer sponsor ID` int(10) NOT NULL, `SponsorshipsTeam sponsor ID` int(10) NOT NULL, PRIMARY KEY (`Players ID`));
+CREATE TABLE Sponsorships (`player sponsor ID` int(10) NOT NULL, `Team sponsor ID` int(10) NOT NULL, budget int(10) NOT NULL, `brand exposure` int(10) NOT NULL, `brand image` varchar(255) NOT NULL, PRIMARY KEY (`player sponsor ID`, `Team sponsor ID`));
+CREATE TABLE Stadiums (`Stadium Name` char(50) NOT NULL, Location char(50) NOT NULL, Capacity int(6) NOT NULL, `Team ID` int(3) NOT NULL, PRIMARY KEY (`Stadium Name`, `Team ID`));
+CREATE TABLE `Team Groups` (`Group ID` varchar(2) NOT NULL, `Team ID` int(3) NOT NULL, PRIMARY KEY (`Group ID`, `Team ID`));
+CREATE TABLE Teams (`Team ID` int(3) NOT NULL AUTO_INCREMENT, Team_Name varchar(50) NOT NULL, `Team Placements` varchar(255) NOT NULL, `Top Scorer` varchar(255) NOT NULL, `Top Assister` varchar(255) NOT NULL, `Squad Size` int(10) NOT NULL, `kit number` int(2) NOT NULL, `Club size` int(10) NOT NULL, `Club earnings` int(10) NOT NULL, `club Exposure` int(10) NOT NULL, `Sponsorshipsplayer sponsor ID` int(10) NOT NULL, `SponsorshipsTeam sponsor ID` int(10) NOT NULL, PRIMARY KEY (`Team ID`));
+ALTER TABLE Stadiums ADD CONSTRAINT FKStadiums496563 FOREIGN KEY (`Team ID`) REFERENCES Teams (`Team ID`);
+ALTER TABLE Players ADD CONSTRAINT FKPlayers376714 FOREIGN KEY (`Team ID`) REFERENCES Teams (`Team ID`);
+ALTER TABLE `Player stats` ADD CONSTRAINT `FKPlayer sta382767` FOREIGN KEY (`Players ID`) REFERENCES Players (`Players ID`);
+ALTER TABLE `Team Groups` ADD CONSTRAINT `FKTeam Group698413` FOREIGN KEY (`Group ID`) REFERENCES Groups (`Group ID`);
+ALTER TABLE `Team Groups` ADD CONSTRAINT `FKTeam Group702464` FOREIGN KEY (`Team ID`) REFERENCES Teams (`Team ID`);
+ALTER TABLE Fitness ADD CONSTRAINT FKFitness677394 FOREIGN KEY (`players ID`) REFERENCES Players (`Players ID`);
+ALTER TABLE Teams ADD CONSTRAINT FKTeams178150 FOREIGN KEY (`Sponsorshipsplayer sponsor ID`, `SponsorshipsTeam sponsor ID`) REFERENCES Sponsorships (`player sponsor ID`, `Team sponsor ID`);
+ALTER TABLE Players ADD CONSTRAINT FKPlayers227288 FOREIGN KEY (`Sponsorshipsplayer sponsor ID`, `SponsorshipsTeam sponsor ID`) REFERENCES Sponsorships (`player sponsor ID`, `Team sponsor ID`);
+
+
+
+/* SECTION 2 INSERT STATEMENTS */
+
+
+                     
+/* SECTION 3 UPDATE STATEMENTS */
+
+
+
+/* SECTION 4 SINGLE TABLE QUERIES */
+
+
+/* 
+1)  
+
+*/
+
+
+
+/* 
+2)  
+
+*/
+
+
+
+
+/* 
+3)  
+
+*/
+
+
+
+/* 
+4)  
+
+*/
+
+
+
+
+/* 
+5)  
+
+*/
+
+
+
+/* 
+6)  
+
+*/
+
+
+
+/* SECTION 5 MULTIPLE TABLE QUERIES */
+
+
+/* 
+1)  
+
+*/
+
+
+
+/* 
+2)  
+
+*/
+
+
+
+/* 
+3)  
+
+*/
+
+
+ 
+
+/* 
+4)  
+
+*/
+
+
+
+/* 
+5)  
+
+*/
+
+
+
+
+/* 
+6)  
+
+*/
+
+
+
+/* SECTION 6 DELETE ROWS (make sure the SQL is commented out in this section)
+
+
+
+*/
+
+/* SECTION 6 DROP TABLES (make sure the SQL is commented out in this section)
+
+
+
+*/
